@@ -10,5 +10,6 @@ Keyboard stuff.
 |---|---|---|
 | Sofle v2 handwired, wired (RJ9, QMK/Vial) | In progress | [boards/sofle-v2-handwired-wired](boards/sofle-v2-handwired-wired/) |
 | Sofle v2 handwired, wireless (BLE, ZMK) | Design | [boards/sofle-v2-handwired-wireless](boards/sofle-v2-handwired-wireless/) |
+| ErgoDox EZ (v3 batch 3a, store-bought) | In use | [boards/ergodox-ez](boards/ergodox-ez/) |
 
 Shared: [keycaps](shared/keycaps/), [datasheets](shared/datasheets/).
