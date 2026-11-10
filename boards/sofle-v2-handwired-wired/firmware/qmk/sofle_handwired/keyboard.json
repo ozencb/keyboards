@@ -11,14 +11,26 @@
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "rows": ["GP2", "GP3", "GP4", "GP5", "GP11"],
-        "cols": ["GP6", "GP7", "GP9", "GP10", "GP12", "GP14"]
+        "rows": ["GP16", "GP3", "GP4", "GP5", "GP11"],
+        "cols": ["GP15", "GP7", "GP9", "GP10", "GP12", "GP14"]
+    },
+    "bootmagic": {
+        "matrix": [0, 0]
     },
     "split": {
         "enabled": true,
+        "bootmagic": {
+            "matrix": [5, 0]
+        },
         "serial": {
             "driver": "vendor",
             "pin": "GP1"
+        },
+        "matrix_pins": {
+            "right": {
+                "rows": ["GP28", "GP26", "GP21", "GP20", "GP16"],
+                "cols": ["GP8", "GP6", "GP4", "GP3", "GP2", "GP29"]
+            }
         }
     },
     "features": {

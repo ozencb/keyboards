@@ -32,3 +32,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     )
 };
+
+// Bootmagic key (outer top key of each half, held while plugging in) only enters the bootloader; keep the Vial keymap
+void bootmagic_reset_eeprom(void) {}
