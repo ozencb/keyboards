@@ -3,34 +3,54 @@
 enum layers { _QWERTY, _LOWER, _RAISE, _ADJUST };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWERTY] = LAYOUT(
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                          KC_LCTL, KC_LALT, KC_LGUI, TL_LOWR, KC_ENT,  KC_SPC,  TL_UPPR, KC_RGUI, KC_RALT, KC_RCTL
-    ),
-    [_LOWER] = LAYOUT(
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,            KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-        _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,          KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
-        _______, KC_EQL,  KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR,          KC_LBRC, KC_RBRC, KC_UNDS, KC_COLN, KC_BSLS, _______,
-                          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
-    [_RAISE] = LAYOUT(
-        _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          KC_PGUP, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_DEL,
-        _______, KC_LALT, KC_LCTL, KC_LSFT, KC_LGUI, KC_CAPS,          KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_BSPC,
-        _______, G(KC_Z), G(KC_X), G(KC_C), G(KC_V), XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-                          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
-    [_ADJUST] = LAYOUT(
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
-        QK_RBT,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, QK_RBT,
-        EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, EE_CLR,
-        NK_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, KC_BRID, XXXXXXX, KC_BRIU, XXXXXXX, NK_TOGG,
-                          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    )
+    [0] = {
+        {KC_ESCAPE, KC_1, KC_2, KC_3, KC_4, KC_5},
+        {KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T},
+        {KC_CAPS_LOCK, KC_A, LT(3, KC_S), LT(2, KC_D), LT(1, KC_F), KC_G},
+        {KC_LEFT_SHIFT, KC_Z, KC_X, KC_C, KC_V, KC_B},
+        {KC_BACKSPACE, KC_NO, KC_LEFT_CTRL, KC_LALT, KC_LGUI, KC_SPACE},
+        {KC_MINUS, KC_0, KC_9, KC_8, KC_7, KC_6},
+        {KC_KP_PLUS, KC_P, KC_O, KC_I, KC_U, KC_Y},
+        {KC_QUOTE, KC_SEMICOLON, LT(3, KC_L), LT(2, KC_K), LT(1, KC_J), KC_H},
+        {KC_RIGHT_SHIFT, KC_SLASH, KC_DOT, KC_COMMA, KC_M, KC_N},
+        {KC_DELETE, KC_NO, KC_RIGHT_CTRL, KC_RALT, KC_RGUI, KC_ENTER},
+    },
+    [1] = {
+        {KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_SEMICOLON, KC_TRNS, KC_TRNS, KC_LEFT_BRACKET},
+        {KC_TRNS, KC_NONUS_BACKSLASH, KC_TRNS, KC_DOT, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_F12, KC_F11, KC_F10, KC_F9, KC_F8, KC_F7},
+        {KC_DELETE, KC_TRNS, KC_COMMA, KC_I, KC_RIGHT_BRACKET, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_NONUS_HASH, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+    },
+    [2] = {
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_GRAVE, LSFT(KC_LEFT_BRACKET), KC_LEFT_BRACKET, KC_RIGHT_BRACKET, LSFT(KC_RIGHT_BRACKET)},
+        {KC_TRNS, LSFT(KC_GRAVE), KC_SEMICOLON, KC_BACKSLASH, KC_EQUAL, KC_LEFT_BRACKET},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LSFT(KC_BACKSLASH), KC_TRNS},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_TRNS, LALT(KC_RIGHT), KC_I, KC_RIGHT_BRACKET, LALT(KC_LEFT)},
+        {KC_TRNS, KC_TRNS, KC_RIGHT, KC_UP, KC_DOWN, KC_LEFT},
+        {KC_TRNS, KC_TRNS, KC_END, KC_PGUP, KC_PAGE_DOWN, KC_HOME},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+    },
+    [3] = {
+        {QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {QK_REBOOT, KC_TRNS, KC_WH_U, KC_MS_U, KC_WH_D, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1},
+        {QK_BOOT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
+        {QK_REBOOT, KC_TRNS, KC_MNXT, KC_MPLY, KC_MPRV, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_VOLU, KC_MUTE, KC_VOLD, KC_TRNS},
+        {KC_TRNS, KC_TRNS, KC_BRIU, KC_TRNS, KC_BRID, KC_TRNS},
+        {KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN2},
+    },
 };
 
 // Bootmagic key (outer top key of each half, held while plugging in) only enters the bootloader; keep the Vial keymap
