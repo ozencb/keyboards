@@ -6,6 +6,9 @@
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 
+#undef MANUFACTURER
+#define MANUFACTURER "Ozenc"
+
 // QMK_SETTINGS is off on this board, so these mirror the Sofle's Vial settings
 #define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
