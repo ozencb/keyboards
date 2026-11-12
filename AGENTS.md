@@ -13,6 +13,7 @@ Everything keyboard related: Fusion 360 sources (`.f3d`) with print-ready export
 - Always edit the design's cloud document directly (open it from the cloud, not by importing the local `.f3d`), and save a new cloud version after changes.
 - Then export the source back to its local `.f3d` file (overwrite the one in the part's folder), so local and cloud copies match.
 - After saving, re-export every affected body as both STL and 3MF so exports never lag the source.
+- Scripts and tools go in `shared/tools/`. Adding, changing or removing one means updating `shared/tools/README.md` (purpose, usage, caveats) in the same commit.
 
 ## Export conventions
 
