@@ -5,7 +5,11 @@
 // Top row, outer key + inner key on the USB half's own side, so unlocking works with one half alone
 #ifdef INIT_EE_HANDS_RIGHT
 #    define VIAL_UNLOCK_COMBO_ROWS {5, 5}
+#    undef PRODUCT
+#    define PRODUCT "Sofle R"
 #else
 #    define VIAL_UNLOCK_COMBO_ROWS {0, 0}
+#    undef PRODUCT
+#    define PRODUCT "Sofle L"
 #endif
 #define VIAL_UNLOCK_COMBO_COLS {0, 5}
