@@ -4,6 +4,7 @@ Scripts shared across boards. Run them from the repo root with `python3`; they n
 
 | Script | What it does |
 |---|---|
+| `ergodox-to-sofle.py` | Inverse: copies the ErgoDox layout back onto `boards/sofle-v2-handwired-wired/firmware/vial.vil`. |
 | `sofle-to-ergodox.py` | Generates `boards/ergodox-ez/firmware/vial.vil` from `boards/sofle-v2-handwired-wired/firmware/vial.vil`. |
 | `vil-to-keymap.py` | Rewrites the `keymaps[]` array in a `keymap.c` from a `.vil`, so a firmware or EEPROM reset gives the current layout. |
 
@@ -18,6 +19,16 @@ python3 shared/tools/sofle-to-ergodox.py
 - ErgoDox-only keys (inner column, small thumb keys, outer two bottom-row keys) are `KC_NO` on layer 0 and `KC_TRNS` above.
 - Sets the ErgoDox Vial UID; everything else (macros, combos, settings) is copied unchanged.
 - The ErgoDox build has `QMK_SETTINGS` off, so tap-hold and mouse settings must also be mirrored by hand in `boards/ergodox-ez/firmware/vial/config.h`.
+
+## ergodox-to-sofle.py
+
+```bash
+python3 shared/tools/ergodox-to-sofle.py
+```
+
+- Uses the same key mapping as `sofle-to-ergodox.py`, in reverse; ErgoDox-only keys are dropped.
+- Only `layout` is replaced; the Sofle's uid, encoders, macros, combos, tap dances and settings are kept, since the ErgoDox export has fewer slots and no QMK settings.
+- Both files must have the same number of layers.
 
 ## vil-to-keymap.py
 
